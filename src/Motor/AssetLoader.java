@@ -1,10 +1,8 @@
 package Motor;
 
 import javax.imageio.ImageIO;
-import javax.sound.sampled.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.net.URL;
 
 /**
  * Created by Juhis5 on 27.11.2015.

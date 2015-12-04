@@ -8,7 +8,7 @@ import java.util.ArrayList;
 /**
  * Created by Juhis5 on 27.11.2015.
  * GameCanvas class extends JPanel and is responsible for calling
- * the draw method off all the drawables in drawables Arraylist.
+ * the draw method off all the drawables in drawables ArrayList.
  */
 public class GameCanvas extends JPanel {
     Game host;
@@ -19,10 +19,10 @@ public class GameCanvas extends JPanel {
     }
 
     /**
-     * Adds a new Drawable object into the Arraylist drawables.
+     * Adds a new Drawable object into the ArrayList drawables.
      * Gets the drawable as a parameter.
      *
-     * @param d is a drawable object that is added into arraylist.
+     * @param d is a drawable object that is added into arrayList.
      */
     public void addDrawable(Drawable d) {
         drawables.add(d);
@@ -30,17 +30,17 @@ public class GameCanvas extends JPanel {
 
     /**
      * Removes the drawable given as a parameter
-     * from the drawables arraylist.
+     * from the drawables arrayList.
      *
      * @param d removes this drawable from the
-     *          arraylist.
+     *          arrayList.
      */
     public void removeDrawable(Drawable d) {
         drawables.remove(d);
     }
 
     /**
-     * Draws the objects in Drawables arraylist
+     * Draws the objects in Drawables arrayList
      * into JPanel.
      *
      * @param g Graphics object.

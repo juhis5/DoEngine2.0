@@ -19,21 +19,11 @@ public class Player extends Sprite implements Drawable {
 
     public Player() {
         super(100, 100, 100, 100);
-        setMaxSpeed(5);
+        setMaxSpeed(10);
         setSpeedX(0);
-        setSpeedY(5);
-        texture = loadTexture("ball.png");
-    }
-
-    public BufferedImage loadTexture(String nameOfImg) {
-        BufferedImage texture = null;
-        try {
-            texture = ImageIO.read(getClass().getClassLoader().getResource
-                    (nameOfImg));
-        } catch (IOException e) {
-            System.out.println("io ex");
-        }
-        return texture;
+        setSpeedY(0);
+        AssetLoader loader = new AssetLoader();
+        texture = loader.loadTexture("ball.png");
     }
 
     @Override

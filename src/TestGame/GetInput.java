@@ -15,17 +15,19 @@ public class GetInput extends InputListener {
         host.getCanvas().requestFocus();
     }
 
+
+
     @Override
     public void keyPressed(KeyEvent e) {
         Player player = host.getPlayer();
         if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-            player.setSpeedX(player.getSpeedX() - 1);
+            player.setSpeedX(player.getSpeedX() - 2);
         } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-            player.setSpeedX(player.getSpeedX() + 1);
+            player.setSpeedX(player.getSpeedX() + 2);
         } else if (e.getKeyCode() == KeyEvent.VK_UP) {
-            player.setSpeedY(player.getSpeedY() - 1);
+            player.setSpeedY(player.getSpeedY() - 2);
         } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-            player.setSpeedY(player.getSpeedY() + 1);
+            player.setSpeedY(player.getSpeedY() + 2);
         }
     }
 }

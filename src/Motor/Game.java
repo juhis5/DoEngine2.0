@@ -38,6 +38,7 @@ public class Game {
                 try {
                     Thread.sleep(time);
                 } catch (Exception e) {
+                    System.out.println("Thread exception");
                 }
             }
         }
@@ -72,6 +73,10 @@ public class Game {
         frame.setVisible(true);
         canvas = new GameCanvas(this);
         frame.add(canvas);
+    }
+
+    public void setAllGameObjects(ArrayList<GameObject> allGameObjects) {
+        this.allGameObjects = allGameObjects;
     }
 
     /**

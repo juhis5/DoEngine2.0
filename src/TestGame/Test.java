@@ -2,8 +2,12 @@ package TestGame;
 
 import Motor.AssetLoader;
 import Motor.Game;
+import Motor.Sound;
+import sun.audio.AudioPlayer;
+import sun.audio.AudioStream;
 
 import javax.imageio.ImageIO;
+import javax.sound.sampled.Clip;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
@@ -13,6 +17,7 @@ import java.io.IOException;
 public class Test extends Game {
     private Player player;
     private Wall wall;
+    private Sound crashSound;
 
     public Test() {
         super();
@@ -22,20 +27,11 @@ public class Test extends Game {
         player = new Player();
         getCanvas().addDrawable(player);
         addGameObject(player);
-        wall = new Wall(200, 200, loadTexture("wall.png"));
+        AssetLoader loader = new AssetLoader();
+        wall = new Wall(200, 200, loader.loadTexture("wall.png"));
+        crashSound = new Sound("Pat.wav");
         addGameObject(wall);
         getCanvas().addDrawable(wall);
-    }
-
-    public BufferedImage loadTexture(String nameOfImg) {
-        BufferedImage texture = null;
-        try {
-            texture = ImageIO.read(getClass().getClassLoader().getResource
-                    (nameOfImg));
-        } catch (IOException e) {
-            System.out.println("io ex");
-        }
-        return texture;
     }
 
     public Player getPlayer() {
@@ -46,7 +42,7 @@ public class Test extends Game {
     public void update() {
         super.update();
         if (player.checkCollision(wall)) {
-            System.out.println("COLLISION");
+            crashSound.play();
         }
     }
 }

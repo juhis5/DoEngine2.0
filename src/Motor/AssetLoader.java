@@ -31,22 +31,4 @@ public class AssetLoader {
         }
         return texture;
     }
-
-    /**
-     * loadAudio Method is used to retrieve sounds
-     * from res folder. Method returns sounds in {@Link Clip} format.
-     * Parameter needs the name of the file.
-     * .au, .aif, and .wav files are supported.
-     *
-     * @param nameOfSoundFile name of the sound sile that is going to be loaded.
-     *
-     * @return Clip object.
-     */
-    public Clip loadAudio(String nameOfSoundFile){
-        Clip clip = null;
-
-
-
-        return clip;
-    }
 }

@@ -6,17 +6,21 @@ import java.net.URL;
 
 /**
  *  Handles playing, stopping, and looping of sounds for the game.
- *
- * Created by Juhis5 on 4.12.2015.
  */
 public class Sound {
+
+    /**
+     * Clip that stores the audio.
+     */
     private Clip clip;
 
     /**
      * Initializes the sound by loading it from res folder.
+     *
      * Needs a filename of the sound file as a parameter.
      *
-     * @param nameOfSoundFile
+     * @param nameOfSoundFile String variable, name of the file that needs to
+     *                        be loaded.
      */
     public Sound(String nameOfSoundFile) {
         try {
@@ -37,7 +41,7 @@ public class Sound {
     /**
      * Plays the clip from the start.
      */
-    public void play(){
+    public void play() {
         clip.setFramePosition(0);  // Must always rewind!
         clip.start();
     }
@@ -45,14 +49,14 @@ public class Sound {
     /**
      * Loops the clip.
      */
-    public void loop(){
+    public void loop() {
         clip.loop(Clip.LOOP_CONTINUOUSLY);
     }
 
     /**
      * Stops the clip.
      */
-    public void stop(){
+    public void stop() {
         clip.stop();
     }
 }

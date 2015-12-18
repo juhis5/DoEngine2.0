@@ -3,9 +3,14 @@ package Motor;
 import java.awt.*;
 
 /**
- * Created by Juhis5 on 27.11.2015.
- * Drawable Interface that is needed to draw on engines GameCanvas.
+ * Interface that is required to draw.
  */
 public interface Drawable {
+
+    /**
+     * Draws thing into Graphics object.
+     *
+     * @param bbg
+     */
     public void draw(Graphics bbg);
 }

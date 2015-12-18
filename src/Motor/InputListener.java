@@ -6,15 +6,16 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 /**
- * Created by Juhis5 on 26.11.2015.
- * InputListener inherits {@link MouseAdapter}
- * and implements {@link KeyListener}
- * And so can be used as a key or mouse listener in game.
+ * Inherits {@link MouseAdapter} and implements {@link KeyListener}.
+ *
+ * Can be used as a key or mouse listener in game.
  */
 public class InputListener extends MouseAdapter implements KeyListener {
 
     /**
-     * @param e
+     * Checks if mouse is clicked.
+     *
+     * @param e MouseEvent
      * @see MouseAdapter
      */
     @Override
@@ -23,7 +24,9 @@ public class InputListener extends MouseAdapter implements KeyListener {
     }
 
     /**
-     * @param e
+     * Checks if mouse is pressed.
+     *
+     * @param e MouseEvent
      * @see MouseAdapter
      */
     @Override
@@ -32,7 +35,9 @@ public class InputListener extends MouseAdapter implements KeyListener {
     }
 
     /**
-     * @param e
+     * Checks if mouse is released.
+     *
+     * @param e MouseEvent
      * @see MouseAdapter
      */
     @Override
@@ -41,7 +46,9 @@ public class InputListener extends MouseAdapter implements KeyListener {
     }
 
     /**
-     * @param e
+     * Checks if mouse is entered.
+     *
+     * @param e MouseEvent
      * @see MouseAdapter
      */
     @Override
@@ -50,7 +57,9 @@ public class InputListener extends MouseAdapter implements KeyListener {
     }
 
     /**
-     * @param e
+     * Checks if mouse is excited.
+     *
+     * @param e MouseEvent
      * @see MouseAdapter
      */
     @Override
@@ -59,7 +68,9 @@ public class InputListener extends MouseAdapter implements KeyListener {
     }
 
     /**
-     * @param e
+     * Checks if key is typed.
+     *
+     * @param e KeyEvent
      * @see KeyListener
      */
     @Override
@@ -68,15 +79,20 @@ public class InputListener extends MouseAdapter implements KeyListener {
     }
 
     /**
-     * @param e
+     * Checks if key is pressed.
+     *
+     * @param e KeyEvent
      * @see KeyListener
      */
     @Override
     public void keyPressed(KeyEvent e) {
+
     }
 
     /**
-     * @param e
+     * Checks if key is released.
+     *
+     * @param e KeyEvent
      * @see KeyListener
      */
     @Override

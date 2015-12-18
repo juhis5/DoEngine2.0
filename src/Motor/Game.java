@@ -4,36 +4,74 @@ import javax.swing.*;
 import java.util.ArrayList;
 
 /**
- * Created by Juhis5 on 27.11.2015.
- * Game class is the main class of the engine. It holds the default canvas
+ * Game class is the main class of the engine.
+ *
+ * Holds the default canvas
  * and all the gameObjects and loops the game.
  */
 public class Game {
+
+    /**
+     * Boolean value to check if game is running.
+     */
     private boolean isRunning;
+
+    /**
+     * Int variable that determines the fps of the game.
+     */
     private int fps;
+
+    /**
+     * Width of the window.
+     */
     private int windowWidth;
+
+    /**
+     * Height of the window.
+     */
     private int windowHeight;
+
+    /**
+     * The JFrame of the game.
+     */
     private JFrame frame;
+
+    /**
+     * List of all the gameObjects.
+     */
     private ArrayList<GameObject> allGameObjects;
+
+    /**
+     * The default canvas of the game.
+     */
     private GameCanvas canvas;
 
     /**
-     * Constructor. Initializes the game by calling the {@link #initialize()}
+     * Constructor.
+     *
+     * Initializes the game by calling the {@link #initialize()}
      * method.
+     *
+     * @param windowWidth Width of the window
+     * @param windowHeight Height of the window
      */
-    public Game() {
+    public Game(int windowWidth, int windowHeight) {
+        this.windowWidth = windowWidth;
+        this.windowHeight = windowHeight;
         initialize();
     }
 
     /**
-     * This method starts the game and runs it in a loop.
-     * Method is designed to cap fps into give fps.
+     * Starts the game and runs it in a loop.
+     *
+     * Method is designed to cap fps into given fps.
      */
     public void run() {
         while (isRunning) {
             long time = System.currentTimeMillis();
             update();
             time = (1000 / fps) - (System.currentTimeMillis() - time);
+
             if (time > 0) {
                 try {
                     Thread.sleep(time);
@@ -42,12 +80,13 @@ public class Game {
                 }
             }
         }
+
         frame.setVisible(false);
     }
 
     /**
-     * This method updates all the {@link GameObject}by calling their
-     * update method.
+     * Updates all the {@link GameObject}by calling their update method.
+     *
      * Method is called repeatedly while game is running.
      */
     public void update() {
@@ -57,15 +96,13 @@ public class Game {
     }
 
     /**
-     * This method will set up everything needed for the game to run
+     * Sets up everything needed for the game to run.
      */
     public void initialize() {
         allGameObjects = new ArrayList<GameObject>();
         frame = new JFrame();
         isRunning = true;
         fps = 30;
-        windowWidth = 800;
-        windowHeight = 800;
         frame.setTitle("DoEngine");
         frame.setSize(windowWidth, windowHeight);
         frame.setResizable(false);
@@ -73,10 +110,6 @@ public class Game {
         frame.setVisible(true);
         canvas = new GameCanvas(this);
         frame.add(canvas);
-    }
-
-    public void setAllGameObjects(ArrayList<GameObject> allGameObjects) {
-        this.allGameObjects = allGameObjects;
     }
 
     /**
@@ -89,7 +122,7 @@ public class Game {
     }
 
     /**
-     * gets frame
+     * Gets frame.
      *
      * @return frame
      */
@@ -98,7 +131,7 @@ public class Game {
     }
 
     /**
-     * Sets frame that is given as a parameter
+     * Sets frame that is given as a parameter.
      *
      * @param frame sets this as a frame.
      */
@@ -107,7 +140,7 @@ public class Game {
     }
 
     /**
-     * Method gets allGameObjects as a Arraylist.
+     * Gets allGameObjects as a Arraylist.
      *
      * @return allGameObjects Arraylist.
      */
@@ -116,7 +149,7 @@ public class Game {
     }
 
     /**
-     * Gets the GameCanvas
+     * Gets the GameCanvas.
      *
      * @return canvas
      */
@@ -125,16 +158,16 @@ public class Game {
     }
 
     /**
-     * Sets the canvas (GameCanvas)
+     * Sets the canvas (GameCanvas).
      *
-     * @param canvas
+     * @param canvas GameCanvas variable
      */
     public void setCanvas(GameCanvas canvas) {
         this.canvas = canvas;
     }
 
     /**
-     * gets isRunning
+     * Gets isRunning.
      *
      * @return isRunning
      */
@@ -143,16 +176,16 @@ public class Game {
     }
 
     /**
-     * Sets isRunning
+     * Sets isRunning.
      *
-     * @param isRunning
+     * @param isRunning Boolean value
      */
     public void setIsRunning(boolean isRunning) {
         this.isRunning = isRunning;
     }
 
     /**
-     * Gets fps
+     * Gets fps.
      *
      * @return fps
      */
@@ -161,16 +194,16 @@ public class Game {
     }
 
     /**
-     * Sets fps
+     * Sets fps.
      *
-     * @param fps
+     * @param fps Int variable the desired fps
      */
     public void setFps(int fps) {
         this.fps = fps;
     }
 
     /**
-     * gets WindowWidth
+     * Gets WindowWidth.
      *
      * @return windowWidth
      */
@@ -179,16 +212,16 @@ public class Game {
     }
 
     /**
-     * Sets windowWidth
+     * Sets windowWidth.
      *
-     * @param windowWidth
+     * @param windowWidth int variable
      */
     public void setWindowWidth(int windowWidth) {
         this.windowWidth = windowWidth;
     }
 
     /**
-     * Gets windowHeight
+     * Gets windowHeight.
      *
      * @return windowHeight
      */
@@ -197,12 +230,11 @@ public class Game {
     }
 
     /**
-     * Sets windowHeight
+     * Sets windowHeight.
      *
-     * @param windowHeight
+     * @param windowHeight int variable
      */
     public void setWindowHeight(int windowHeight) {
         this.windowHeight = windowHeight;
     }
-
 }

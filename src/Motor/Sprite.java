@@ -1,18 +1,29 @@
 package Motor;
 
 /**
- * Created by Juhis5 on 27.11.2015.
- * Sprite is a class inherited from {@link GameObject}
- * that holds all the variables needed for a sprite.
+ * Inherited from {@link GameObject}.
+ *
+ * Holds all the variables needed for a sprite.
  */
 public abstract class Sprite extends GameObject {
-    private double speedX;
-    private double speedY;
-    private int maxSpeed;
-    private boolean moving;
 
     /**
-     * Constructor sets up the rectangle by the given parameters
+     * Horizontal speed.
+     */
+    private double speedX;
+
+    /**
+     * Vertical speed.
+     */
+    private double speedY;
+
+    /**
+     * Maximal speed.
+     */
+    private int maxSpeed;
+
+    /**
+     * Sets up the rectangle by the given parameters.
      *
      * @param x      Position x of the sprite
      * @param y      Position y of the sprite
@@ -25,7 +36,8 @@ public abstract class Sprite extends GameObject {
 
     /**
      * Override of the {@link GameObject} update method.
-     * updates the position of the sprite according to the
+     *
+     * Updates the position of the sprite according to the
      * speed variables when called.
      */
     @Override
@@ -44,16 +56,16 @@ public abstract class Sprite extends GameObject {
     }
 
     /**
-     * Sets the maxSpeed variable
+     * Sets the maxSpeed variable.
      *
-     * @param maxSpeed
+     * @param maxSpeed maxSpeed
      */
     public void setMaxSpeed(int maxSpeed) {
         this.maxSpeed = maxSpeed;
     }
 
     /**
-     * Gets speedX
+     * Gets speedX.
      *
      * @return speedX
      */
@@ -62,9 +74,9 @@ public abstract class Sprite extends GameObject {
     }
 
     /**
-     * Sets speedX
+     * Sets speedX.
      *
-     * @param speedX
+     * @param speedX horizontal speed
      */
     public void setSpeedX(double speedX) {
         if (speedX > maxSpeed) {
@@ -77,7 +89,7 @@ public abstract class Sprite extends GameObject {
     }
 
     /**
-     * Gets speedY
+     * Gets speedY.
      *
      * @return speedY
      */
@@ -86,9 +98,9 @@ public abstract class Sprite extends GameObject {
     }
 
     /**
-     * Sets SpeedY
+     * Sets SpeedY.
      *
-     * @param speedY
+     * @param speedY vertical speed
      */
     public void setSpeedY(double speedY) {
         if (speedY > maxSpeed) {
